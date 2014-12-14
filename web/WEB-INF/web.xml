@@ -9,4 +9,8 @@
         <servlet-name>ChameleonServlet</servlet-name>
         <servlet-class>com.bssys.chameleon.servlet.ChameleonServlet</servlet-class>
     </servlet>
+    <servlet-mapping>
+        <servlet-name>ChameleonServlet</servlet-name>
+        <url-pattern>/chameleon/*</url-pattern>
+    </servlet-mapping>
 </web-app>
