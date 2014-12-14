@@ -11,6 +11,6 @@
     </servlet>
     <servlet-mapping>
         <servlet-name>ChameleonServlet</servlet-name>
-        <url-pattern>/chameleon/*</url-pattern>
+        <url-pattern>/chameleon/*.*</url-pattern>
     </servlet-mapping>
 </web-app>
