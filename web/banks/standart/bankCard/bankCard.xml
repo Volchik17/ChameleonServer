@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<structure
+        moduleType="bankCard"
+        type="bankCard"
+        description="Standart bank card"
+        version="1"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="bankCard.xsd"
+        xmlns:inheritance="http://www.bssys.com.MBSClient.XMLInheritance.html"
+        >
+
+    <title>
+        <caption text="%bankName%"/>
+        <color value="00FF00"/>
+    </title>
+
+    <infoPanels inheritance:list="id">
+        <panel id="News"/>
+        <panel id="CurrencyRates"/>
+        <panel id="ATM"/>
+    </infoPanels>
+
+    <authentication inheritance:list="id">
+        <method id="password"/>
+    </authentication>
+
+</structure>

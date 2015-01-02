@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://www.bssys.com.MBSClient.XMLInheritance.html" targetNamespace="http://www.bssys.com.MBSClient.XMLInheritance.html" elementFormDefault="qualified" attributeFormDefault="qualified">
+	<xs:simpleType name="true_false">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="0"/>
+            <xs:enumeration value="1"/>
+            <xs:enumeration value="true"/>
+            <xs:enumeration value="false"/>
+        </xs:restriction>
+	</xs:simpleType>
+	<xs:attributeGroup name="inheritance">
+		<xs:attribute name="deleted" type="true_false"/>
+		<xs:attribute name="deleted_attributes" type="xs:string"/>
+		<xs:attribute name="position">
+			<xs:simpleType>
+				<xs:restriction base="xs:string">
+					<xs:pattern value="first|last|after:.*|before:.*"/>
+				</xs:restriction>
+			</xs:simpleType>
+		</xs:attribute>
+	</xs:attributeGroup>
+	<xs:attributeGroup name="inheritance_list">
+		<xs:attributeGroup ref="inheritance"/>
+		<xs:attribute name="list" type="xs:string" use="required"/>
+	</xs:attributeGroup>
+	<xs:attributeGroup name="inheritance_structure">
+		<xs:attribute name="parent" type="xs:string" use="optional"/>
+        <xs:attribute name="patch" type="true_false" use="optional"/>
+	</xs:attributeGroup>
+</xs:schema>

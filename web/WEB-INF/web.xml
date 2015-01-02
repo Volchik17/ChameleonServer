@@ -6,11 +6,16 @@
            version="3.0">
 
     <servlet>
-        <servlet-name>ChameleonServlet</servlet-name>
-        <servlet-class>com.bssys.chameleon.servlet.ChameleonServlet</servlet-class>
+        <servlet-name>ChameleonSpringServlet</servlet-name>
+        <servlet-class>
+            org.springframework.web.servlet.DispatcherServlet
+        </servlet-class>
+        <load-on-startup>1</load-on-startup>
     </servlet>
+
     <servlet-mapping>
-        <servlet-name>ChameleonServlet</servlet-name>
+        <servlet-name>ChameleonSpringServlet</servlet-name>
         <url-pattern>/chameleon/*</url-pattern>
     </servlet-mapping>
+
 </web-app>

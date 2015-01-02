@@ -1,11 +1,15 @@
 <component name="ArtifactManager">
-  <artifact type="exploded-war" name="ChameleonServer:war exploded">
+  <artifact type="war" name="ChameleonServer:war exploded">
     <output-path>$PROJECT_DIR$/out/artifacts/ChameleonServer_war_exploded</output-path>
-    <root id="root">
+    <root id="archive" name="ChameleonServer_war exploded.war">
       <element id="javaee-facet-resources" facet="ChameleonServer/web/Web" />
       <element id="directory" name="WEB-INF">
         <element id="directory" name="classes">
           <element id="module-output" name="ChameleonServer" />
+        </element>
+        <element id="directory" name="lib">
+          <element id="library" level="project" name="lib" />
+          <element id="library" level="project" name="Spring-4.1.2.RELEASE" />
         </element>
       </element>
     </root>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<structure
+        moduleType="bankCard"
+        type="bankCard"
+        description="Bank card for Alfa bank"
+        version="1"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="bankCard.xsd"
+        xmlns:inheritance="http://www.bssys.com.MBSClient.XMLInheritance.html"
+        inheritance:patch="1"
+        >
+
+    <title>
+        <caption inheritance:deleted="1"/>
+        <image name="%bankIcon%"/>
+        <color value="C02A26"/>
+    </title>
+
+</structure>

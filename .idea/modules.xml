@@ -3,6 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/ChameleonServer.iml" filepath="$PROJECT_DIR$/ChameleonServer.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../ChameleonServerTests/ChameleonServerTests/ChameleonServerTests.iml" filepath="$PROJECT_DIR$/../ChameleonServerTests/ChameleonServerTests/ChameleonServerTests.iml" />
     </modules>
   </component>
 </project>

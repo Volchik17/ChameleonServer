@@ -11,6 +11,10 @@
       <root url="jar://$PROJECT_DIR$/lib/jboss-transaction-api_1.1_spec-1.0.1.Final.jar!/" />
       <root url="file://$PROJECT_DIR$/lib/commons-logging-1.2" />
       <root url="jar://D:/apache-tomcat-8.0.5/lib/servlet-api.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/spring-web-4.1.2.RELEASE.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/spring-webmvc-4.1.2.RELEASE.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/spring-webmvc-portlet-4.1.2.RELEASE.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/spring-websocket-4.1.2.RELEASE.jar!/" />
     </CLASSES>
     <JAVADOC>
       <root url="file://$PROJECT_DIR$/lib/commons-logging-1.2/apidocs" />

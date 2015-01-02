@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ServerConfig>
+    <Banks>
+        <Bank id="vtb24"
+              subsystemFactoryClassName="com.bssys.umcserver.subsystem.StandardSubsystemFactory"
+              defaultGate="default">
+
+            <Gates>
+                <Gate name="default" type="DBO3">
+                    <Address url="http://10.1.2.242:20302/"/>
+                </Gate>
+            </Gates>
+        </Bank>
+        <Bank id="alpha"
+              subsystemFactoryClassName="com.bssys.umcserver.subsystem.StandardSubsystemFactory"
+              defaultGate="default">
+
+            <Gates>
+                <Gate name="default" type="DBO3">
+                    <Address url="http://10.1.2.242:20302/"/>
+                </Gate>
+            </Gates>
+        </Bank>
+        <Bank id="sber"
+              subsystemFactoryClassName="com.bssys.umcserver.subsystem.StandardSubsystemFactory"
+              defaultGate="default">
+
+            <Gates>
+                <Gate name="default" type="DBO3">
+                    <Address url="http://10.1.2.242:20302/"/>
+                </Gate>
+            </Gates>
+        </Bank>
+    </Banks>
+</ServerConfig>

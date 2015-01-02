@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" attributeFormDefault="unqualified">
+	<xs:simpleType name="bool">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="0"/>
+			<xs:enumeration value="1"/>
+            <xs:enumeration value="true"/>
+            <xs:enumeration value="false"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="DataType">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="STRING"/>
+			<xs:enumeration value="INTEGER"/>
+			<xs:enumeration value="LONG"/>
+			<xs:enumeration value="DOUBLE"/>
+			<xs:enumeration value="DATE"/>
+			<xs:enumeration value="DATETIME"/>
+			<xs:enumeration value="MONEY"/>
+			<xs:enumeration value="BOOLEAN"/>
+		</xs:restriction>
+	</xs:simpleType>
+</xs:schema>

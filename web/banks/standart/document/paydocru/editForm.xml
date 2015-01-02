@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<structure moduleType="document"
+           moduleName="PaymentOrder"
+           type="documentForm"
+           description="PaymentOrder view form"
+           version="1.0"
+           xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+           xsi:noNamespaceSchemaLocation="documentForm.xsd"
+           xmlns:inheritance="http://www.bssys.com.MBSClient.XMLInheritance.html">
+    <formDescription>
+        <actions inheritance:list="id">
+            <action id="ADD" inheritance:list="id">
+                <status id="0"/>
+                <status id="3"/>
+                <status id="4"/>
+            </action>
+            <action id="SAVE_TO_TEMPLATE" inheritance:list="id">
+                <status id="0"/>
+                <status id="3"/>
+                <status id="4"/>
+                <status id="5"/>
+                <status id="37"/>
+            </action>
+            <action id="VERIFY_SIGN" onlyOnline="1" inheritance:list="id">
+                <status id="1"/>
+            </action>
+        </actions>
+        <initialValues inheritance:list="id">
+            <field name="Payer" value="Приветик"/>
+            <field name="Receiver" value="Лапочка"/>
+        </initialValues>
+        <formFields inheritance:list="fieldName">
+            <field fieldName="TaxPeriodIndex" dataType="INTEGER"/>
+        </formFields>
+        <view onCreate="initEdit" inheritance:list="id">
+            <widget id="Status" fieldName="Status" label="%DocStatus%" type="editText" format="status"/>
+            <widget id="DocumentNumber" fieldName="DocumentNumber" label="%DocumentNumber%" type="editText"/>
+            <group id="PayerGroup" label="%Payer%" inheritance:list="id">
+                <widget id="PayerPropertyType" fieldName="PayerPropertyType" type="editText" weight="1" size="10" enabled="1"/>
+                <widget id="Payer" fieldName="Payer" type="editText" weight="5" size="160" lines="2" enabled="1"/>
+            </group>
+            <widget id="PayerAccount" fieldName="PayerAccount" label="%PayerAccount%" type="editText" format="account"/>
+            <vgroup id="ReceiverVGroup" inheritance:list="id">
+                <widget id="RequisitesReceiver" label="%RequisitesReceiver%" type="label" background="dark"/>
+                <widget id="SendType" fieldName="SendType" label="%SendType%" type="dictionarySelect" enabled="1" dictionary="PaySendType" lookupFieldName="Description">
+                    <fills inheritance:list="fieldName">
+                        <fill fieldName="SendTypeCode" value="#dictionary.Code"/>
+                    </fills>
+                </widget>
+                <widget id="ReceiverKPP" fieldName="ReceiverKPP" label="%KPP%" type="editText" size="9" enabled="1"/>
+                <group id="ReceiverGroup" label="%Receiver%" inheritance:list="id">
+                    <widget id="ReceiverPropertyType" fieldName="ReceiverPropertyType" type="editText" weight="1" size="10" enabled="1"/>
+                    <widget id="Receiver" fieldName="Receiver" type="editText" weight="5" size="160" lines="2" enabled="1"/>
+                </group>
+                <widget id="ReceiverAccount" fieldName="ReceiverAccount" label="%ReceiverAccount%" type="editText" format="account" enabled="1"/>
+            </vgroup>
+            <widget id="TaxPeriodSelector" fieldName="formFields.TaxPeriodSelector" label="%TaxPeriodParam0%" type="listSelect" >
+                <values inheritance:list="id">
+                    <value value="Не определен" id="Not defined">
+                        <fills inheritance:list="id">
+                            <fill fieldName="formFields.TaxPeriodIndex" value="0"/>
+                        </fills>
+                    </value>
+                    <value value="Налоговый период" id="Period">
+                        <fills inheritance:list="id">
+                            <fill fieldName="formFields.TaxPeriodIndex" value="1"/>
+                        </fills>
+                    </value>
+                    <value value="Код таможенного органа" id="Code">
+                        <fills inheritance:list="id">
+                            <fill fieldName="formFields.TaxPeriodIndex" value="2"/>
+                        </fills>
+                    </value>
+                </values>
+            </widget>
+        </view>
+    </formDescription>
+</structure>

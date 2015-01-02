@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:inheritance="http://www.bssys.com.MBSClient.XMLInheritance.html">
+    <xs:import namespace="http://www.bssys.com.MBSClient.XMLInheritance.html" schemaLocation="MBCInheritance.xsd"/>
+    <xs:include schemaLocation="MBCTypes.xsd"/>
+    <xs:element name="structure">
+        <xs:annotation>
+            <xs:documentation>Общий корневой тег у всех структур метаданных.</xs:documentation>
+        </xs:annotation>
+        <xs:complexType>
+            <xs:all>
+                <xs:element ref="title"/>
+                <xs:element ref="infoPanels" minOccurs="0"/>
+                <xs:element ref="authentication" minOccurs="0"/>
+            </xs:all>
+            <xs:attribute name="version" type="xs:integer" use="required">
+                <xs:annotation>
+                    <xs:documentation>Версия метаданных. Может быть произвольной строкой. Все сравнения производятся по точному равенству.</xs:documentation>
+                </xs:annotation>
+            </xs:attribute>
+            <xs:attribute name="type" use="required">
+                <xs:annotation>
+                    <xs:documentation>Тип структуры. В данном случае всегда имеет значение "bankCard".</xs:documentation>
+                </xs:annotation>
+                <xs:simpleType>
+                    <xs:restriction base="xs:string">
+                        <xs:enumeration value="bankCard"/>
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:attribute>
+            <xs:attribute name="moduleType" use="required">
+                <xs:annotation>
+                    <xs:documentation>Тип модуля. В данном случае всегда имеет значение "bankCard".</xs:documentation>
+                </xs:annotation>
+                <xs:simpleType>
+                    <xs:restriction base="xs:string">
+                        <xs:enumeration value="bankCard"/>
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:attribute>
+            <xs:attribute name="description" type="xs:string" use="optional">
+                <xs:annotation>
+                    <xs:documentation>Произвольное описание (комментарии) структуры.</xs:documentation>
+                </xs:annotation>
+            </xs:attribute>
+            <xs:attributeGroup ref="inheritance:inheritance_structure"/>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="title">
+        <xs:annotation>
+            <xs:documentation>Описание заголовка карточки банка.</xs:documentation>
+        </xs:annotation>
+        <xs:complexType>
+            <xs:all>
+                <xs:element ref="caption" minOccurs="0"/>
+                <xs:element ref="color" minOccurs="0"/>
+                <xs:element ref="image" minOccurs="0"/>
+            </xs:all>
+            <xs:attributeGroup ref="inheritance:inheritance"/>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="infoPanels">
+        <xs:annotation>
+            <xs:documentation>Описание набора информационных панелей в нижней части карточки банка.</xs:documentation>
+        </xs:annotation>
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="panel" minOccurs="0" maxOccurs="unbounded"/>
+            </xs:sequence>
+            <xs:attributeGroup ref="inheritance:inheritance_list"/>
+        </xs:complexType>
+        <xs:unique name="panelIdUniqueRule">
+            <xs:selector xpath="./panel"/>
+            <xs:field xpath="@id"/>
+        </xs:unique>
+    </xs:element>
+    <xs:element name="authentication">
+        <xs:annotation>
+            <xs:documentation>Описание заголовка карточки банка.</xs:documentation>
+        </xs:annotation>
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="method" minOccurs="0" maxOccurs="unbounded"/>
+            </xs:sequence>
+            <xs:attributeGroup ref="inheritance:inheritance_list"/>
+            <xs:attributeGroup ref="inheritance:inheritance"/>
+        </xs:complexType>
+        <xs:unique name="methodIdUniqueRule">
+            <xs:selector xpath="./method"/>
+            <xs:field xpath="@id"/>
+        </xs:unique>
+    </xs:element>
+    <xs:element name="caption">
+        <xs:annotation>
+            <xs:documentation>Текст заголовка карточки банка.</xs:documentation>
+        </xs:annotation>
+        <xs:complexType>
+            <xs:attribute name="text" type="xs:string" use="optional">
+                <xs:annotation>
+                    <xs:documentation>Текст заголовка.</xs:documentation>
+                </xs:annotation>
+            </xs:attribute>
+            <xs:attribute name="default" type="bool" use="optional">
+                <xs:annotation>
+                    <xs:documentation>Если выставлен в true, то текст заголовка формируется автоматически как название банка.</xs:documentation>
+                </xs:annotation>
+            </xs:attribute>
+            <xs:attributeGroup ref="inheritance:inheritance"/>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="color">
+        <xs:annotation>
+            <xs:documentation>Цвет заголовка карточки банка.</xs:documentation>
+        </xs:annotation>
+        <xs:complexType>
+            <xs:attribute name="value" type="xs:string" use="required">
+                <xs:annotation>
+                    <xs:documentation>Значение цвета.</xs:documentation>
+                </xs:annotation>
+            </xs:attribute>
+            <xs:attributeGroup ref="inheritance:inheritance"/>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="image">
+        <xs:annotation>
+            <xs:documentation>Логотип на заголовке карточки банка.</xs:documentation>
+        </xs:annotation>
+        <xs:complexType>
+            <xs:attribute name="name" type="xs:string" use="required">
+                <xs:annotation>
+                    <xs:documentation>Название ресурса.</xs:documentation>
+                </xs:annotation>
+            </xs:attribute>
+            <xs:attributeGroup ref="inheritance:inheritance"/>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="panel">
+        <xs:annotation>
+            <xs:documentation>Описание одной информационной панели на карточке банка.</xs:documentation>
+        </xs:annotation>
+        <xs:complexType>
+            <xs:attribute name="id" type="xs:string" use="required">
+                <xs:annotation>
+                    <xs:documentation>Идентификатор типа панели.</xs:documentation>
+                </xs:annotation>
+            </xs:attribute>
+            <xs:attributeGroup ref="inheritance:inheritance"/>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="method">
+        <xs:annotation>
+            <xs:documentation>Описание метода аутентификации.</xs:documentation>
+        </xs:annotation>
+        <xs:complexType>
+            <xs:attribute name="id" type="xs:string" use="required">
+                <xs:annotation>
+                    <xs:documentation>Идентификатор метода авторизации.</xs:documentation>
+                </xs:annotation>
+            </xs:attribute>
+            <xs:attributeGroup ref="inheritance:inheritance"/>
+        </xs:complexType>
+    </xs:element>
+</xs:schema>
