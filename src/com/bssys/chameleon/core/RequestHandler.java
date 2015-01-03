@@ -2,6 +2,7 @@ package com.bssys.chameleon.core;
 
 import org.w3c.dom.Document;
 
+import javax.servlet.ServletContext;
 import javax.xml.stream.XMLStreamWriter;
 
 /**
@@ -9,6 +10,6 @@ import javax.xml.stream.XMLStreamWriter;
  */
 public interface RequestHandler {
 
-    void processRequest(String moduleName,String requestVersion,Document request, XMLStreamWriter writer);
+    void processRequest(ServletContext servletContext,String moduleName,String requestVersion,Document request, XMLStreamWriter writer) throws Exception;
 
 }

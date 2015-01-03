@@ -3,7 +3,7 @@
 <ServerConfig>
     <Banks>
         <Bank id="vtb24"
-              subsystemFactoryClassName="com.bssys.umcserver.subsystem.StandardSubsystemFactory"
+              moduleFactoryClassName="com.bssys.chameleon.fakeBank.FakeModuleFactory"
               defaultGate="default">
 
             <Gates>
@@ -13,7 +13,7 @@
             </Gates>
         </Bank>
         <Bank id="alpha"
-              subsystemFactoryClassName="com.bssys.umcserver.subsystem.StandardSubsystemFactory"
+              moduleFactoryClassName="com.bssys.chameleon.fakeBank.FakeModuleFactory"
               defaultGate="default">
 
             <Gates>
@@ -23,7 +23,7 @@
             </Gates>
         </Bank>
         <Bank id="sber"
-              subsystemFactoryClassName="com.bssys.umcserver.subsystem.StandardSubsystemFactory"
+              moduleFactoryClassName="com.bssys.chameleon.fakeBank.FakeModuleFactory"
               defaultGate="default">
 
             <Gates>

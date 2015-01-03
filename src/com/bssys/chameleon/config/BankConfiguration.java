@@ -17,8 +17,8 @@ public class BankConfiguration {
         return id;
     }
 
-    public String getSubsystemFactoryClassName() {
-        return subsystemFactoryClassName;
+    public String getModuleFactoryClassName() {
+        return moduleFactoryClassName;
     }
 
     public String getDefaultGate() {
@@ -30,7 +30,7 @@ public class BankConfiguration {
     }
 
     private String id;
-    private String subsystemFactoryClassName;
+    private String moduleFactoryClassName;
     private String defaultGate;
     private HashMap<String,GateAddress> gates=new HashMap<String, GateAddress>();
 
@@ -39,7 +39,7 @@ public class BankConfiguration {
             @Override
             public void startParsing(String uri, String localName, String qName, Attributes attributes) throws SAXException {
                 id=attributes.getValue("id");
-                subsystemFactoryClassName=attributes.getValue("subsystemFactoryClassName");
+                moduleFactoryClassName =attributes.getValue("moduleFactoryClassName");
                 defaultGate=attributes.getValue("defaultGate");
             }
 

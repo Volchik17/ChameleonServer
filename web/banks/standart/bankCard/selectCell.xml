@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<structure
+        moduleType="bankCard"
+        type="selectCell"
+        description="Default select cell"
+        version="1"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="selectCell.xsd"
+        xmlns:inheritance="http://www.bssys.com.MBSClient.XMLInheritance.html"
+        inheritance:patch="1"
+        >
+
+    <image source="defaultBank.png"/>
+
+    <view inheritance:list="id">
+        <widget id="bankName" type="label" value="#bankName"/>
+    </view>
+
+</structure>
