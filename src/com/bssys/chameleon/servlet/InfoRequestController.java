@@ -59,8 +59,8 @@ public class InfoRequestController {
             document=builder.parse(new InputSource(request.getInputStream()));
         XMLOutputFactory xmlFactory = XMLOutputFactory.newInstance();
         XMLStreamWriter writer=xmlFactory.createXMLStreamWriter(response.getWriter());
-        writer.writeStartDocument("UTF8","1.0");
-        handler.processRequest(servletContext,moduleName,version,document,writer);
+        writer.writeStartDocument("UTF-765","1.0");
+        //handler.processRequest(servletContext,moduleName,version,document,writer);
         response.getWriter().flush();
         response.getWriter().close();
     }

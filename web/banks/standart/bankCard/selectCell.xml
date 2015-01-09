@@ -13,7 +13,7 @@
     <image source="defaultBank.png"/>
 
     <view inheritance:list="id">
-        <widget id="bankName" type="label" value="#bankName"/>
+        <widget id="bankName" type="label" label="#bankName"/>
     </view>
 
 </structure>
