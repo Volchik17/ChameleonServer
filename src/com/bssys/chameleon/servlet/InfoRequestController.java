@@ -58,11 +58,11 @@ public class InfoRequestController {
         else
             document=builder.parse(new InputSource(request.getInputStream()));
         XMLOutputFactory xmlFactory = XMLOutputFactory.newInstance();
-        XMLStreamWriter writer=xmlFactory.createXMLStreamWriter(response.getWriter());
-        writer.writeStartDocument("UTF-765","1.0");
-        //handler.processRequest(servletContext,moduleName,version,document,writer);
-        response.getWriter().flush();
-        response.getWriter().close();
+        XMLStreamWriter writer=xmlFactory.createXMLStreamWriter(response.getOutputStream(),"UTF-8");
+        writer.writeStartDocument("UTF-8","1.0");
+        handler.processRequest(servletContext,moduleName,version,document,writer);
+        response.getOutputStream().flush();
+        response.getOutputStream().close();
     }
 
     public void setServerConfigurationManager(ServerConfigurationManager serverConfigurationManager) {

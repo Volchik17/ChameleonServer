@@ -1,5 +1,7 @@
 package com.bssys.chameleon.core;
 
+import org.springframework.stereotype.Component;
+
 import java.io.IOException;
 import java.io.InputStream;
 import java.security.MessageDigest;
@@ -9,6 +11,7 @@ import java.security.NoSuchAlgorithmException;
  * Created by volchik on 30.12.14.
  */
 
+@Component
 public class SHA256Hash implements HashAlgorithm {
 
     private static final int BUFFER_SIZE = 2048;

@@ -1,8 +1,8 @@
 package com.bssys.chameleon.resource;
 
 import com.bssys.chameleon.core.ChameleonContext;
-import com.bssys.chameleon.core.Log;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.io.File;
 import java.io.FileInputStream;
@@ -14,10 +14,9 @@ import java.nio.file.Paths;
 /**
  * Created by volchik on 30.12.14.
  */
-public class FileResourceStorage implements ResourceStorage {
 
-    @Autowired
-    private Log log;
+@Service
+public class FileResourceStorage implements ResourceStorage {
 
     @Autowired
     private ChameleonContext chameleonContext;
@@ -44,10 +43,6 @@ public class FileResourceStorage implements ResourceStorage {
         } catch (FileNotFoundException e) {
             throw new EResourceNotFound("Error loading resource: "+f.getAbsolutePath(),e);
         }
-    }
-
-    public void setLog(Log log) {
-        this.log = log;
     }
 
     public void setChameleonContext(ChameleonContext chameleonContext) {

@@ -4,8 +4,8 @@ package com.bssys.chameleon.metadata;
  * Created by volchik on 20.12.14.
  */
 
-import com.bssys.chameleon.core.Log;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 import org.w3c.dom.*;
 import java.io.*;
 import javax.xml.transform.*;
@@ -18,14 +18,12 @@ import javax.xml.xpath.XPathFactory;
 import java.util.ArrayList;
 import java.util.Properties;
 
+@Component
 public class MetadataProcessorImpl implements MetadataProcessor{
 
     static final String defaultBankId="standart";
 
     static final String inheritanceURI="http://www.bssys.com.MBSClient.XMLInheritance.html";
-
-    @Autowired
-    private Log log;
 
     @Autowired
     private MetadataStorage metadataStorage;
@@ -321,7 +319,4 @@ public class MetadataProcessorImpl implements MetadataProcessor{
         this.metadataStorage = metadataStorage;
     }
 
-    public void setLog(Log log) {
-        this.log = log;
-    }
 }

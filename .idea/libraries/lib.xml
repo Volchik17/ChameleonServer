@@ -15,11 +15,55 @@
       <root url="jar://$PROJECT_DIR$/lib/spring-webmvc-4.1.2.RELEASE.jar!/" />
       <root url="jar://$PROJECT_DIR$/lib/spring-webmvc-portlet-4.1.2.RELEASE.jar!/" />
       <root url="jar://$PROJECT_DIR$/lib/spring-websocket-4.1.2.RELEASE.jar!/" />
+      <root url="file://$PROJECT_DIR$/lib/slf4j-1.7.10" />
+      <root url="file://$PROJECT_DIR$/lib/logback-1.1.2" />
     </CLASSES>
     <JAVADOC>
       <root url="file://$PROJECT_DIR$/lib/commons-logging-1.2/apidocs" />
+      <root url="file://$PROJECT_DIR$/lib/slf4j-1.7.10/site/apidocs" />
+      <root url="file://$PROJECT_DIR$/lib/slf4j-1.7.10/site/testapidocs" />
     </JAVADOC>
-    <SOURCES />
+    <SOURCES>
+      <root url="file://$PROJECT_DIR$/lib/slf4j-1.7.10/slf4j-api/src/main/java" />
+      <root url="file://$PROJECT_DIR$/lib/slf4j-1.7.10/slf4j-api/src/test/java" />
+      <root url="file://$PROJECT_DIR$/lib/slf4j-1.7.10/slf4j-ext/src/main/java" />
+      <root url="file://$PROJECT_DIR$/lib/slf4j-1.7.10/slf4j-ext/src/test/java" />
+      <root url="file://$PROJECT_DIR$/lib/slf4j-1.7.10/slf4j-jcl/src/main/java" />
+      <root url="file://$PROJECT_DIR$/lib/slf4j-1.7.10/slf4j-jcl/src/test/java" />
+      <root url="file://$PROJECT_DIR$/lib/slf4j-1.7.10/slf4j-nop/src/main/java" />
+      <root url="file://$PROJECT_DIR$/lib/slf4j-1.7.10/slf4j-nop/src/test/java" />
+      <root url="file://$PROJECT_DIR$/lib/slf4j-1.7.10/integration/src/test/java" />
+      <root url="file://$PROJECT_DIR$/lib/slf4j-1.7.10/slf4j-jdk14/src/main/java" />
+      <root url="file://$PROJECT_DIR$/lib/slf4j-1.7.10/slf4j-jdk14/src/test/java" />
+      <root url="file://$PROJECT_DIR$/lib/slf4j-1.7.10/jul-to-slf4j/src/main/java" />
+      <root url="file://$PROJECT_DIR$/lib/slf4j-1.7.10/jul-to-slf4j/src/test/java" />
+      <root url="file://$PROJECT_DIR$/lib/slf4j-1.7.10/slf4j-simple/src/main/java" />
+      <root url="file://$PROJECT_DIR$/lib/slf4j-1.7.10/slf4j-simple/src/test/java" />
+      <root url="file://$PROJECT_DIR$/lib/slf4j-1.7.10/slf4j-android/src/main/java" />
+      <root url="file://$PROJECT_DIR$/lib/slf4j-1.7.10/slf4j-android/src/test/java" />
+      <root url="file://$PROJECT_DIR$/lib/slf4j-1.7.10/slf4j-log4j12/src/main/java" />
+      <root url="file://$PROJECT_DIR$/lib/slf4j-1.7.10/slf4j-log4j12/src/test/java" />
+      <root url="file://$PROJECT_DIR$/lib/slf4j-1.7.10/jcl-over-slf4j/src/main/java" />
+      <root url="file://$PROJECT_DIR$/lib/slf4j-1.7.10/jcl-over-slf4j/src/test/java" />
+      <root url="file://$PROJECT_DIR$/lib/slf4j-1.7.10/slf4j-migrator/src/main/java" />
+      <root url="file://$PROJECT_DIR$/lib/slf4j-1.7.10/slf4j-migrator/src/test/java" />
+      <root url="file://$PROJECT_DIR$/lib/slf4j-1.7.10/osgi-over-slf4j/src/main/java" />
+      <root url="file://$PROJECT_DIR$/lib/slf4j-1.7.10/log4j-over-slf4j/src/main/java" />
+      <root url="file://$PROJECT_DIR$/lib/slf4j-1.7.10/log4j-over-slf4j/src/test/java" />
+      <root url="file://$PROJECT_DIR$/lib/slf4j-1.7.10" />
+      <root url="file://$PROJECT_DIR$/lib/logback-1.1.2/logback-core/src/main/java" />
+      <root url="file://$PROJECT_DIR$/lib/logback-1.1.2/logback-core/src/test/java" />
+      <root url="file://$PROJECT_DIR$/lib/logback-1.1.2/logback-access/src/main/java" />
+      <root url="file://$PROJECT_DIR$/lib/logback-1.1.2/logback-access/src/test/java" />
+      <root url="file://$PROJECT_DIR$/lib/logback-1.1.2/logback-classic/src/main/java" />
+      <root url="file://$PROJECT_DIR$/lib/logback-1.1.2/logback-classic/src/test/java" />
+      <root url="file://$PROJECT_DIR$/lib/logback-1.1.2/logback-examples/src/main/java" />
+      <root url="file://$PROJECT_DIR$/lib/logback-1.1.2" />
+    </SOURCES>
     <jarDirectory url="file://$PROJECT_DIR$/lib/commons-logging-1.2" recursive="false" />
+    <jarDirectory url="file://$PROJECT_DIR$/lib/logback-1.1.2" recursive="false" />
+    <jarDirectory url="file://$PROJECT_DIR$/lib/slf4j-1.7.10" recursive="false" />
+    <jarDirectory url="file://$PROJECT_DIR$/lib/logback-1.1.2" recursive="false" type="SOURCES" />
+    <jarDirectory url="file://$PROJECT_DIR$/lib/slf4j-1.7.10" recursive="false" type="SOURCES" />
   </library>
 </component>

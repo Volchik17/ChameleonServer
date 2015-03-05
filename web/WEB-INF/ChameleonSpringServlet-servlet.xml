@@ -9,9 +9,9 @@
    http://www.springframework.org/schema/context
    http://www.springframework.org/schema/context/spring-context-3.0.xsd">
 
-    <!--context:component-scan base-package="com.bssys.chameleon.servlet" /-->
+    <context:component-scan base-package="com.bssys.chameleon" />
 
-    <bean class="com.bssys.chameleon.servlet.PingController" autowire="byType"/>
+    <!--bean class="com.bssys.chameleon.servlet.PingController" autowire="byType"/>
     <bean class="com.bssys.chameleon.servlet.MetadataController" autowire="byType"/>
     <bean class="com.bssys.chameleon.servlet.ResourceController" autowire="byType"/>
     <bean class="com.bssys.chameleon.servlet.InfoRequestController" autowire="byType"/>
@@ -25,6 +25,6 @@
     <bean id="ServerConfigurationManager" class="com.bssys.chameleon.config.ServerConfigurationManager" autowire="byType"/>
     <bean id="MetadataProcessor" class="com.bssys.chameleon.metadata.MetadataProcessorImpl" autowire="byType"/>
     <bean id="MetadataStorage" class="com.bssys.chameleon.metadata.FileMetadataStorage" autowire="byType"/>
-    <bean id="ResourceStorage" class="com.bssys.chameleon.resource.FileResourceStorage" autowire="byType"/>
+    <bean id="ResourceStorage" class="com.bssys.chameleon.resource.FileResourceStorage" autowire="byType"/-->
 
 </beans>

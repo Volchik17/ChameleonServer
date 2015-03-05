@@ -7,6 +7,7 @@ import org.xml.sax.SAXException;
 /**
  * Created by volchik on 15.12.14.
  */
+
 public class DBO3GateAddress extends GateAddress {
 
     public static String DBO3_GATE_TYPE="dbo3";

@@ -10,8 +10,8 @@
         >
 
     <title>
-        <caption text="%bankName%"/>
-        <color value="00FF00"/>
+        <caption default="true"/>
+        <color value="808080"/>
     </title>
 
     <infoPanels inheritance:list="id">

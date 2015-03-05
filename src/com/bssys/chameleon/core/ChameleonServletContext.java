@@ -1,5 +1,6 @@
 package com.bssys.chameleon.core;
 
+import org.springframework.stereotype.Service;
 import org.springframework.web.context.ServletContextAware;
 
 import javax.servlet.ServletContext;
@@ -8,6 +9,7 @@ import javax.servlet.ServletContext;
  * Created by volchik on 25.12.14.
  */
 
+@Service
 public class ChameleonServletContext implements ChameleonContext,ServletContextAware {
 
     private String basePath="";

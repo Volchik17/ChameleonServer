@@ -2,6 +2,7 @@ package com.bssys.chameleon.metadata;
 
 import com.bssys.chameleon.core.HashAlgorithm;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
 import java.security.MessageDigest;
@@ -10,6 +11,8 @@ import java.security.NoSuchAlgorithmException;
 /**
  * Created by volchik on 20.12.14.
  */
+
+@Service
 public class MetadataManager {
 
     private static MetadataManager mInstance=new MetadataManager();
@@ -19,7 +22,7 @@ public class MetadataManager {
     @Autowired
     private MetadataProcessor metadataProcessor;
 
-    @Autowired
+    @Resource(name = "SHA256Hash")
     private HashAlgorithm hashAlgorithm;
 
     public static synchronized MetadataManager instance() {

@@ -2,8 +2,8 @@ package com.bssys.chameleon.resource;
 
 import com.bssys.chameleon.core.ChameleonContext;
 import com.bssys.chameleon.core.HashAlgorithm;
-import com.bssys.chameleon.core.Log;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
 import java.io.InputStream;
@@ -14,6 +14,7 @@ import java.util.Map;
  * Created by volchik on 30.12.14.
  */
 
+@Service
 public class ResourceManager {
 
     static final String defaultBankId="standart";
@@ -23,9 +24,6 @@ public class ResourceManager {
 
     @Autowired
     private ChameleonContext chameleonContext;
-
-    @Autowired
-    private Log log;
 
     @Autowired
     private ResourceStorage storage;
@@ -82,10 +80,6 @@ public class ResourceManager {
 
     public void setChameleonContext(ChameleonContext chameleonContext) {
         this.chameleonContext = chameleonContext;
-    }
-
-    public void setLog(Log log) {
-        this.log = log;
     }
 
     public void setStorage(ResourceStorage storage) {

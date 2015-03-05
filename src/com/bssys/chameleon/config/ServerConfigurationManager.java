@@ -2,6 +2,7 @@ package com.bssys.chameleon.config;
 
 import com.bssys.chameleon.core.ChameleonContext;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 import org.xml.sax.SAXException;
 
 import javax.xml.parsers.ParserConfigurationException;
@@ -10,6 +11,8 @@ import java.io.IOException;
 /**
  * Created by volchik on 14.12.14.
  */
+
+@Service
 public class ServerConfigurationManager {
 
     @Autowired

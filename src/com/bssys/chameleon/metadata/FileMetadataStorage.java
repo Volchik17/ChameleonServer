@@ -1,13 +1,11 @@
 package com.bssys.chameleon.metadata;
 
 import com.bssys.chameleon.core.ChameleonContext;
-import com.bssys.chameleon.core.Log;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Service;
 import org.w3c.dom.Document;
 import org.xml.sax.*;
 
-import javax.annotation.Resource;
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
 import java.io.*;
@@ -19,6 +17,7 @@ import java.util.Properties;
  * Created by volchik on 26.12.14.
  */
 
+@Service
 public class FileMetadataStorage implements MetadataStorage {
 
     static final String JAXP_SCHEMA_LANGUAGE =
@@ -26,11 +25,10 @@ public class FileMetadataStorage implements MetadataStorage {
     static final String W3C_XML_SCHEMA =
             "http://www.w3.org/2001/XMLSchema";
 
-    @Autowired
-    private ChameleonContext chameleonContext;
+    private static final org.slf4j.Logger log = org.slf4j.LoggerFactory.getLogger("chameleon.metadata.storage");
 
     @Autowired
-    private Log log;
+    private ChameleonContext chameleonContext;
 
     private Path getLocalizedResourcesFileName(String bankId,String moduleType,String moduleName,String structureName, String langId) {
         if (moduleName==null || moduleName.length()==0)
@@ -46,7 +44,7 @@ public class FileMetadataStorage implements MetadataStorage {
         if (file.exists() && file.isFile())
             try {
                 strings.load(new InputStreamReader(new FileInputStream(file), "UTF-8"));
-            } catch (FileNotFoundException e) {log.Warning("Metadata","Localized resources do not exists %s",file.getAbsolutePath());} catch (IOException e) {log.Error("Metadata",e,"Error loading localized resources: %s",file.getAbsolutePath());}
+            } catch (FileNotFoundException e) {log.warn("Localized resources do not exists {}",file.getAbsolutePath());} catch (IOException e) {log.error("Error loading localized resources: {}. {}",file.getAbsolutePath(),e);}
         return strings;
     }
 
@@ -135,7 +133,4 @@ public class FileMetadataStorage implements MetadataStorage {
         return chameleonContext;
     }
 
-    public void setLog(Log log) {
-        this.log = log;
-    }
 }
